@@ -1,20 +1,19 @@
-import { save_all } from "./functions.js";
+import { save_all, buttonSave } from "./functions.js";
 import { alertMsg } from "./alert.js";
 
-var changed = false;
-
-var function_to_apply = [];
-
-const BUTTON_close_header_application = document.getElementById(
-  "close_header_application"
-);
+const BUTTON_close_header_application = document.getElementById("close_header_application");
 const BUTTON_choose_background = document.getElementById("background");
 const CANVAS = document.getElementById("root");
 const BUTTON_save_all = document.getElementById("save_all");
 
 var globals = {
+  changed: false,
   header_application_is_open: false,
+  function_to_apply: [],
 };
+
+const ha = header_application();
+const btns = buttonSave();
 
 function header_application() {
   const el = document.getElementById("header_application");
@@ -29,13 +28,13 @@ function header_application() {
       globals.header_application_is_open = true;
     },
     close() {
-      if (changed) {
-
+      if (globals.changed) {
         function action(result) {
           if (result) {
-            function_to_apply = [];
-            changed = false;
+            globals.function_to_apply = [];
+            globals.changed = false;
             ha.close();
+            btns.hide();
           }
         }
 
@@ -52,7 +51,6 @@ function header_application() {
   };
 }
 
-const ha = header_application();
 
 const bidings = {
   m: () => {
@@ -73,29 +71,30 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-BUTTON_choose_background.addEventListener("change", (e) => {
-  changed = true;
+BUTTON_close_header_application.addEventListener("click", () => {
+  setTimeout(ha.close, 150);
+});
 
-  function_to_apply.push(() => {
+BUTTON_choose_background.addEventListener("change", (e) => {
+  globals.changed = true;
+  btns.show();
+  globals.function_to_apply.push(() => {
     setTimeout(() => {
       CANVAS.style.background = e.target.value;
     }, 500);
   });
 });
 
-BUTTON_close_header_application.addEventListener("click", () => {
-  setTimeout(ha.close, 150);
-});
-
 BUTTON_save_all.addEventListener("click", (e) => {
   e.stopPropagation();
-  if (changed) {
-    save_all(function_to_apply, ha.close);
+  if (globals.changed) {
+    save_all(globals.function_to_apply, ha.close);
     alertMsg('All changes saved!', {
       buttonRight: true,
       textButtonRight: 'OK',
     }, ha.close);
-    changed = false;
+    globals.changed = false;
+    btns.hide();
     return;
   }
 });

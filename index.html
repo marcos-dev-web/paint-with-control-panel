@@ -18,38 +18,46 @@
         <button class="button" id="yes"></button>
       </div>
     </span>
+
     <header id="header_application">
-        <section id="controllers">
-          
-          <section class="controller">
-            <div class="header">
-              <h3 class="title">choose color</h3>
+      <section id="controllers">
+        <section class="controller">
+          <div class="header">
+            <h3 class="title">pencil color</h3>
+          </div>
+          <div class="content">
+            <div class="input_color">
+              <input
+                type="color"
+                class="colors"
+                id="paint_color"
+                value="#000000"
+              />
             </div>
-            <div class="content">
-              <div class="input_color">
-                <input type="color" class="colors" id="paint_color" value="#000000"/>
-              </div>
-            </div>
-          </section>
-
-          <section class="controller">
-            <div class="header">
-              <h3 class="title">background</h3>
-            </div>
-            <div class="content">
-              <div class="input_color">
-                <input type="color" class="colors" id="background" value="#ffffff"/>
-              </div>
-            </div>
-          </section>
-
+          </div>
         </section>
-        
-        <section id="buttons_bar">
-          <span id="close_header_application">&lt;</span>
-          <span id="save_all">save</span>
+
+        <section class="controller">
+          <div class="header">
+            <h3 class="title">background</h3>
+          </div>
+          <div class="content">
+            <div class="input_color">
+              <input
+                type="color"
+                class="colors"
+                id="background"
+                value="#ffffff"
+              />
+            </div>
+          </div>
         </section>
-      </div>
+      </section>
+
+      <section id="buttons_bar">
+        <span id="close_header_application">&lt;</span>
+        <span id="save_all">save</span>
+      </section>
     </header>
     <canvas id="root"></canvas>
     <script type="module" src="./src/iterations/keyBidings.js"></script>
