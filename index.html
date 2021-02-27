@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/import.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <span id="alertMessages">
+      <div id="message">
+        <p class="contentMessage"></p>
+      </div>
+      <div id="buttons">
+        <button class="button" id="no"></button>
+        <button class="button" id="yes"></button>
+      </div>
+    </span>
+    <header id="header_application">
+        <section id="controllers">
+          
+          <section class="controller">
+            <div class="header">
+              <h3 class="title">choose color</h3>
+            </div>
+            <div class="content">
+              <div class="input_color">
+                <input type="color" class="colors" id="paint_color" value="#000000"/>
+              </div>
+            </div>
+          </section>
+
+          <section class="controller">
+            <div class="header">
+              <h3 class="title">background</h3>
+            </div>
+            <div class="content">
+              <div class="input_color">
+                <input type="color" class="colors" id="background" value="#ffffff"/>
+              </div>
+            </div>
+          </section>
+
+        </section>
+        
+        <section id="buttons_bar">
+          <span id="close_header_application">&lt;</span>
+          <span id="save_all">save</span>
+        </section>
+      </div>
+    </header>
+    <canvas id="root"></canvas>
+    <script type="module" src="./src/iterations/keyBidings.js"></script>
+  </body>
+</html>

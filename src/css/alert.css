@@ -1,0 +1,47 @@
+#alertMessages {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 900;
+  width: 250px;
+  background: rgb(129, 170, 218);
+  color: white;
+  border-radius: 5px;
+  padding: 10px 5px;
+  transition: 300ms;
+}
+#message {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 20px;
+}
+#buttons {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+}
+.button {
+  padding: 5px 8px;
+  border-radius: 5px;
+  background: rgb(232, 233, 236);
+  color: black;
+  text-align: center;
+  width: 40px;
+  position: relative;
+}
+.button::before {
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  position: absolute;
+  background: rgba(0, 153, 255, 0.479);
+}
+.button:active::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+}
