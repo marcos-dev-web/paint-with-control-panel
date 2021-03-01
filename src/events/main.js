@@ -36,13 +36,17 @@ const listBidings = {
       ha.open();
     }
   },
+  n: () => {
+    changePencil('default');
+    CANVAS.style = `cursor: default;`
+  },
   b: () => {
     changePencil('del');
     CANVAS.style = `cursor: url('src/img/mouse.png'), pointer;`;
   },
   p: () => {
     changePencil('draw');
-    CANVAS.removeAttribute('style');
+    CANVAS.style = `cursor: url('src/img/pencil.ico'), pointer;`
   }
 };
 

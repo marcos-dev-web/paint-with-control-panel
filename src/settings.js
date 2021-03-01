@@ -1,5 +1,5 @@
 var color = 'black';
-var pencil = 'draw';
+var pencil = 'default';
 var backgroundColor = 'white';
 
 function changeColor(value) {
