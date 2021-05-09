@@ -2,9 +2,15 @@
 a app for draw with control panel
 
 # functionalitys
-for open the control panel, only click "m"
-when you click in the key "m", a tab show from left to right expanded by all screen.
-so, in this tab you can set settings.
+
+* d
+	- press 'd' to can delete something
+* m
+	- press 'm' to open menu
+* n
+	- press 'n' to back to default cursor
+* p
+	- press 'p' to paint into canvas
 
 now, have only to configurations
 1. change pencil color (still not implemented).

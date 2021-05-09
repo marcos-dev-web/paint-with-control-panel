@@ -40,7 +40,7 @@ const listBidings = {
     changePencil('default');
     CANVAS.style = `cursor: default;`
   },
-  b: () => {
+  d: () => {
     changePencil('del');
     CANVAS.style = `cursor: url('src/img/mouse.png'), pointer;`;
   },
